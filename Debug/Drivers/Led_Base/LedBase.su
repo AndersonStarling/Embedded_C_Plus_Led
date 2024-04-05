@@ -1,0 +1,4 @@
+../Drivers/Led_Base/LedBase.cpp:7:1:Led_Base::Led_Base(uint32_t, uint32_t)	24	static
+../Drivers/Led_Base/LedBase.cpp:13:1:Led_Base::~Led_Base()	16	static
+../Drivers/Led_Base/LedBase.cpp:13:1:virtual Led_Base::~Led_Base()	16	static
+../Drivers/Led_Base/LedBase.cpp:19:6:void Led_Base::toggle()	16	static
