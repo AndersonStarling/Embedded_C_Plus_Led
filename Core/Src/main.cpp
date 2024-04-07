@@ -22,6 +22,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <cstdint>
+#include <array>
+#include <limits>
+#include <numeric>
 #include "Mcal_Name_Space.hpp"
 #include "LedBase.hpp"
 /* USER CODE END Includes */
@@ -71,6 +74,17 @@ int main(void)
 		mcal::reg::porta,
 		mcal::reg::bitset15
 	};
+
+	int test = 0;
+
+	constexpr int n_dig = std::numeric_limits<int>::digits;
+	constexpr int n_max = std::numeric_limits<int>::max();
+
+	std::array<std::uint8_t, 3> my_array_1 = {2, 4, 6};
+	std::array<std::uint8_t, 3> my_array_2 = {3, 5, 7};
+	std::uint64_t my_number = 1'000'000;
+
+	test = std::inner_product(my_array_1.begin(), my_array_1.end(), my_array_2.begin(), 100);
 
 
   /* USER CODE END 1 */
