@@ -27,6 +27,7 @@
 #include <numeric>
 #include "Mcal_Name_Space.hpp"
 #include "LedBase.hpp"
+#include "LedPort.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
