@@ -69,22 +69,6 @@ static void MX_GPIO_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	Led_Base Led
-	{
-		mcal::reg::porta,
-		mcal::reg::bitset15
-	};
-
-	int test = 0;
-
-	constexpr int n_dig = std::numeric_limits<int>::digits;
-	constexpr int n_max = std::numeric_limits<int>::max();
-
-	std::array<std::uint8_t, 3> my_array_1 = {2, 4, 6};
-	std::array<std::uint8_t, 3> my_array_2 = {3, 5, 7};
-	std::uint64_t my_number = 1'000'000;
-
-	test = std::inner_product(my_array_1.begin(), my_array_1.end(), my_array_2.begin(), 100);
 
 
   /* USER CODE END 1 */
@@ -109,7 +93,6 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
-    Led.toggle();
   /* USER CODE END 2 */
 
   /* Infinite loop */

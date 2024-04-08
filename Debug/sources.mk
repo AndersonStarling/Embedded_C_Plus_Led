@@ -35,6 +35,7 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Drivers/Led_Base \
+Drivers/Led_Port \
 Drivers/Mcal_Name_Space \
 Drivers/STM32F4xx_HAL_Driver/Src \
 
