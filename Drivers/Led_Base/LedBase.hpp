@@ -11,7 +11,7 @@
 class Led_Base {
 public:
 	virtual ~Led_Base();
-	virtual void toggle(void);
+	virtual void toggle(void) = 0;
 
 };
 
