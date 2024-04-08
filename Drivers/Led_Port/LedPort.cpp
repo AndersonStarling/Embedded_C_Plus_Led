@@ -6,6 +6,7 @@
  */
 
 #include <cstdint>
+#include "LedBase.hpp"
 #include "LedPort.h"
 
 

@@ -8,7 +8,8 @@
 #ifndef LED_PORT_LEDPORT_H_
 #define LED_PORT_LEDPORT_H_
 
-class Led_Port {
+class Led_Port : public Led_Base
+{
 public:
 	Led_Port(std::uint32_t port, std::uint32_t bit);
 	virtual ~Led_Port();
