@@ -73,7 +73,7 @@ int main(void)
 	Led_Port Led_1
 	{
 		mcal::reg::porta,
-		mcal::reg::bitset15
+        mcal::reg::bitset15
 	};
 
   /* USER CODE END 1 */
@@ -98,7 +98,7 @@ int main(void)
   MX_GPIO_Init();
 
   /* USER CODE BEGIN 2 */
-
+    Led_1.toggle();
   /* USER CODE END 2 */
 
   /* Infinite loop */

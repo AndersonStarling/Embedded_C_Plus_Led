@@ -12,8 +12,9 @@ class Led_Port : public Led_Base
 {
 public:
 	Led_Port(std::uint32_t port, std::uint32_t bit);
+
 	virtual ~Led_Port();
-	void toggle(void);
+	virtual void toggle(void);
 
 private:
 	std::uint32_t port;
