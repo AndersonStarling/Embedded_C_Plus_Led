@@ -11,17 +11,16 @@
 
 Led_Pwm::Led_Pwm()
 {
-
-
+	my_pwm.setDutyCycle(0);
 }
 
 Led_Pwm::~Led_Pwm()
 {
-
+	my_pwm.setDutyCycle(0);
 }
 
 void Led_Pwm::toggle(void)
 {
-
+    my_pwm.setDutyCycle(Led_Base::led_on ? 0 : 100);
 }
 
