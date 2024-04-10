@@ -18,7 +18,6 @@ protected:
     Led_Base();
 
 private:
-
 	Led_Base(const Led_Base&) = delete;
 	const Led_Base& operator=(const Led_Base&) = delete;
 

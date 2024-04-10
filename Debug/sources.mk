@@ -36,6 +36,8 @@ Core/Src \
 Core/Startup \
 Drivers/Led_Base \
 Drivers/Led_Port \
+Drivers/Led_Pwm \
 Drivers/Mcal_Name_Space \
+Drivers/Pwm_Class \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

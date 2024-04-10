@@ -10,7 +10,9 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
+-include Drivers/Pwm_Class/subdir.mk
 -include Drivers/Mcal_Name_Space/subdir.mk
+-include Drivers/Led_Pwm/subdir.mk
 -include Drivers/Led_Port/subdir.mk
 -include Drivers/Led_Base/subdir.mk
 -include Core/Startup/subdir.mk
