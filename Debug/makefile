@@ -11,10 +11,12 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Drivers/Pwm_Class/subdir.mk
+-include Drivers/Peripheral_Access_Layer/subdir.mk
 -include Drivers/Mcal_Name_Space/subdir.mk
 -include Drivers/Led_Pwm/subdir.mk
 -include Drivers/Led_Port/subdir.mk
 -include Drivers/Led_Base/subdir.mk
+-include Drivers/Gpio_Driver/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -63,34 +65,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := embedded_cplus
+BUILD_ARTIFACT_NAME := Embedded_C_Plus_Led
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-embedded_cplus.elf \
+Embedded_C_Plus_Led.elf \
 
 MAP_FILES += \
-embedded_cplus.map \
+Embedded_C_Plus_Led.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-embedded_cplus.list \
+Embedded_C_Plus_Led.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: embedded_cplus.elf secondary-outputs
+main-build: Embedded_C_Plus_Led.elf secondary-outputs
 
 # Tool invocations
-embedded_cplus.elf embedded_cplus.map: $(OBJS) $(USER_OBJS) F:\Project\App_STM_NEW\embedded_cplus\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "embedded_cplus.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"F:\Project\App_STM_NEW\embedded_cplus\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="embedded_cplus.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Embedded_C_Plus_Led.elf Embedded_C_Plus_Led.map: $(OBJS) $(USER_OBJS) A:\Application_Project\Embedded_C_Plus_Led\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "Embedded_C_Plus_Led.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"A:\Application_Project\Embedded_C_Plus_Led\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Embedded_C_Plus_Led.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -99,14 +101,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-embedded_cplus.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "embedded_cplus.list"
+Embedded_C_Plus_Led.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Embedded_C_Plus_Led.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout embedded_cplus.elf embedded_cplus.list embedded_cplus.map
+	-$(RM) Embedded_C_Plus_Led.elf Embedded_C_Plus_Led.list Embedded_C_Plus_Led.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

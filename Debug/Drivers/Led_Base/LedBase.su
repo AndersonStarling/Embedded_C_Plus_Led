@@ -1,0 +1,3 @@
+../Drivers/Led_Base/LedBase.cpp:7:1:Led_Base::~Led_Base()	16	static
+../Drivers/Led_Base/LedBase.cpp:7:1:virtual Led_Base::~Led_Base()	16	static
+../Drivers/Led_Base/LedBase.cpp:10:1:Led_Base::Led_Base()	16	static

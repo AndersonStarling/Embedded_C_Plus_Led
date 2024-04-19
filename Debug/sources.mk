@@ -40,10 +40,12 @@ CPP_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
+Drivers/Gpio_Driver \
 Drivers/Led_Base \
 Drivers/Led_Port \
 Drivers/Led_Pwm \
 Drivers/Mcal_Name_Space \
+Drivers/Peripheral_Access_Layer \
 Drivers/Pwm_Class \
 Drivers/STM32F4xx_HAL_Driver/Src \
 
