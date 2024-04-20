@@ -34,8 +34,6 @@ namespace Peripheral
 
 		/* Gpio bit mask */
 		constexpr std::uint32_t GPIO_MODER_X_BIT_MASK = 0x2;
-
-
 	}
 };
 
