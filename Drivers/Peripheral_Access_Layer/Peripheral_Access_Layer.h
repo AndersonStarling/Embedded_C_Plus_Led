@@ -12,14 +12,6 @@ namespace Peripheral
 {
     namespace Gpio
 	{
-        /* Gpio base index */
-        constexpr std::uint32_t GPIOA_INDEX = 0;
-        constexpr std::uint32_t GPIOB_INDEX = 1;
-        constexpr std::uint32_t GPIOC_INDEX = 2;
-        constexpr std::uint32_t GPIOD_INDEX = 3;
-        constexpr std::uint32_t GPIOE_INDEX = 4;
-        constexpr std::uint32_t GPIOH_INDEX = 5;
-
 		/* Gpio base address */
 	    constexpr std::uint32_t Gpio_A_Base = 0x40020000;
 	    constexpr std::uint32_t Gpio_B_Base = 0x40020400;
