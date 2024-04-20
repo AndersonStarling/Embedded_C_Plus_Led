@@ -22,17 +22,15 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <cstdint>
-#include <array>
-#include <limits>
-#include <numeric>
-#include "Mcal_Name_Space.hpp"
-#include "LedBase.hpp"
-#include "LedPort.h"
+#include "Peripheral_Access_Layer.h"
+#include "Gpio.h"
+
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+typedef Gpio_Type<std::uint32_t, std::uint32_t, Peripheral::Gpio::Gpio_A_Base, 15, 0> Port_A_Pin_15;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -70,11 +68,6 @@ static void MX_GPIO_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	Led_Port Led_1
-	{
-		mcal::reg::porta,
-        mcal::reg::bitset15
-	};
 
   /* USER CODE END 1 */
 
@@ -95,10 +88,13 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
+//  MX_GPIO_Init();
 
   /* USER CODE BEGIN 2 */
-    Led_1.toggle();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  Port_A_Pin_15::Init_Pin_Out();
+  Port_A_Pin_15::Set_Pin_Out();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -168,7 +164,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_15, GPIO_PIN_SET);
 
   /*Configure GPIO pin : PA15 */
   GPIO_InitStruct.Pin = GPIO_PIN_15;

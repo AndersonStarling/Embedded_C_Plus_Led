@@ -1,6 +1,0 @@
-../Drivers/Pwm_Class/Pwm.cpp:12:6:void Pwm::enable()	16	static
-../Drivers/Pwm_Class/Pwm.cpp:17:10:uint32_t Pwm::getDutyCycle()	16	static
-../Drivers/Pwm_Class/Pwm.cpp:22:6:void Pwm::setDutyCycle(uint32_t)	16	static
-../Drivers/Pwm_Class/Pwm.cpp:27:1:Pwm::Pwm()	16	static
-../Drivers/Pwm_Class/Pwm.cpp:33:1:Pwm::~Pwm()	16	static
-../Drivers/Pwm_Class/Pwm.cpp:33:1:virtual Pwm::~Pwm()	16	static

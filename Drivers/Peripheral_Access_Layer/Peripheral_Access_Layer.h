@@ -12,8 +12,6 @@ namespace Peripheral
 {
     namespace Gpio
 	{
-        extern std::uint32_t GPIO_ARRAY[];
-
         /* Gpio base index */
         constexpr std::uint32_t GPIOA_INDEX = 0;
         constexpr std::uint32_t GPIOB_INDEX = 1;
@@ -23,12 +21,12 @@ namespace Peripheral
         constexpr std::uint32_t GPIOH_INDEX = 5;
 
 		/* Gpio base address */
-	    constexpr std::uint32_t GPIOA_BASE = 0x40020000;
-	    constexpr std::uint32_t GPIOB_BASE = 0x40020400;
-	    constexpr std::uint32_t GPIOC_BASE = 0x40020800;
-	    constexpr std::uint32_t GPIOD_BASE = 0x40020C00;
-	    constexpr std::uint32_t GPIOE_BASE = 0x40021000;
-	    constexpr std::uint32_t GPIOH_BASE = 0x40021C00;
+	    constexpr std::uint32_t Gpio_A_Base = 0x40020000;
+	    constexpr std::uint32_t Gpio_B_Base = 0x40020400;
+	    constexpr std::uint32_t Gpio_C_Base = 0x40020800;
+	    constexpr std::uint32_t Gpio_D_Base = 0x40020C00;
+	    constexpr std::uint32_t Gpio_E_Base = 0x40021000;
+	    constexpr std::uint32_t Gpio_H_Base = 0x40021C00;
 
         /* Gpio register offset from base address */
 		constexpr std::uint32_t GPIOX_MODER_OFFSET   = 0x00;
@@ -41,6 +39,11 @@ namespace Peripheral
 		constexpr std::uint32_t GPIOX_LCKR_OFFSET    = 0x1C;
 		constexpr std::uint32_t GPIOX_AFRL_OFFSET    = 0x20;
 		constexpr std::uint32_t GPIOX_AFRH_OFFSET    = 0x24;
+
+		/* Gpio bit mask */
+		constexpr std::uint32_t GPIO_MODER_X_BIT_MASK = 0x2;
+
+
 	}
 };
 
@@ -59,6 +62,11 @@ class register_access
 	    static void reg_and(void)
 	    {
 	        *reinterpret_cast<volatile address_type*>(address) &= value;
+	    }
+
+	    static void reg_clr(void)
+	    {
+	    	*reinterpret_cast<volatile address_type*>(address) &= ~value;
 	    }
 };
 
